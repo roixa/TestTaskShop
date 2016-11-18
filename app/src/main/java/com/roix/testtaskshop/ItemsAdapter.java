@@ -65,7 +65,7 @@ public class ItemsAdapter  extends RecyclerView.Adapter<ItemsAdapter.ItemViewHol
             int pos=getAdapterPosition();
             Item item=items.get(pos);
             total.setText(""+progress*Integer.parseInt(item.getCost()));
-            items.get(pos).setCount(progress);
+            item.setCount(progress);
             context.updateViews(items);
         }
 
