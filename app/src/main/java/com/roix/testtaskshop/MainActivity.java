@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity implements LoadAndParseTask.
         total=(TextView)findViewById(R.id.total);
         button=(Button)findViewById(R.id.buy);
         button.setOnClickListener(this);
-        updateViews(null);
+
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        updateViews(null);
         new LoadAndParseTask().execute(this);
 
     }
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements LoadAndParseTask.
 
         try {
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-            finish();
+            //finish();
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(MainActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
